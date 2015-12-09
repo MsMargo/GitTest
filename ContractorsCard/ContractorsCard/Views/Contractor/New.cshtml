@@ -1,0 +1,42 @@
+﻿@model ContractorsCard.Models.ViewModel.NewOrEditContractorView
+@{
+    ViewBag.Title = "New";
+}
+
+<h2>New contractor:</h2>
+@using (@Html.BeginForm("New", "Contractor", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+        @Html.HiddenFor(m => m.Id)
+    <label class="col-sm-2 control-label">Contractor Name</label>
+        @Html.TextBoxFor(m => m.ContractorName, new { @class="form-control"})
+
+    <label class="col-sm-2 control-label">Country</label>
+        @Html.TextBoxFor(m => m.Country, new { @class = "form-control" })
+
+    <label class="col-sm-2 control-label">ZIP</label>
+        @Html.TextBoxFor(m => m.Zip, new { @class = "form-control" })
+
+    <label class="col-sm-2 control-label">City</label>
+        @Html.TextBoxFor(m => m.City, new { @class = "form-control" })
+
+    <label class="col-sm-2 control-label">Street</label>
+        @Html.TextBoxFor(m => m.Street, new { @class = "form-control" })
+
+    <label class="col-sm-2 control-label">House Number</label>
+        @Html.TextBoxFor(m => m.HouseNumber, new { @class = "form-control" })
+
+    <label class="col-sm-2 control-label">Housing</label>
+        @Html.TextBoxFor(m => m.Housing, new { @class = "form-control" })
+
+    <label class="col-sm-2 control-label">NIP</label>
+        @Html.TextBoxFor(m => m.Nip, new { @class = "form-control" })
+
+    <label class="col-sm-2 control-label">e-mail</label>
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+
+    <label class="col-sm-2 control-label">Phone Number</label>
+        @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control" })
+
+    <input type="submit" class="btn btn-default" value="Add" />
+}
+

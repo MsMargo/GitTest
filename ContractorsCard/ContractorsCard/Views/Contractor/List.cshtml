@@ -1,0 +1,42 @@
+﻿@model IEnumerable<ContractorsCard.Models.ViewModel.ContractorListView>
+@{
+    ViewBag.Title = "Contractors List";
+}
+
+<h2>Contractors List</h2>
+
+    <input type="button" value="Add new contactor" class="btn btn-default" onclick="location.href='@Url.Action("New", "Contractor")'" />
+
+    <table border="1" class="table-hover">
+        <thead>
+            <tr>
+                <th>Contractor Name</th>
+                <th>Country</th>
+                <th>ZIP</th>
+                <th>City</th>
+                <th>Address</th>
+                <th>NIP</th>
+                <th>e-mail</th>
+                <th>Phone Number</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var contractor in Model)
+            {
+                <tr>
+                    <td>@contractor.ContractorName</td>
+                    <td>@contractor.Country</td>
+                    <td>@contractor.Zip</td>
+                    <td>@contractor.City</td>
+                    <td>@contractor.Address</td>
+                    <td>@contractor.Nip</td>
+                    <td>@contractor.Email</td>
+                    <td>@contractor.PhoneNumber</td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = contractor.Id })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
